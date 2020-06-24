@@ -1,0 +1,80 @@
+\begin{thebibliography}{10}
+
+\bibitem{付中梁}
+付中梁, 冯华君, 徐之海, 李奇, and 毛成军.
+\newblock 基于快速ccd位移探测的运动模糊图像的恢复.
+\newblock {\em 光电工程}, 36(3):69--73, 5 2009.
+
+\bibitem{刘羽}
+刘羽.
+\newblock {\em 像素级多源图像融合方法研究}.
+\newblock 博士论文, 中国科学技术大学, 9 2016.
+
+\bibitem{周望}
+周望.
+\newblock
+  基于数字微镜器件技术提高面阵ccd相机动态范围的研究.
+\newblock {\em 光学学报}, 29(3):638--642, 6 2009.
+
+\bibitem{和文娟}
+和文娟.
+\newblock Cmos图像传感器的噪声分析及图像处理.
+\newblock 硕士论文, 华中科技大学, 4 2011.
+
+\bibitem{张芮}
+张芮, 姚明海, and 顾勤龙.
+\newblock 车辆牌照识别系统的一个新的实现方法.
+\newblock {\em 控制工程}, 10(1):59--61, 1 2003.
+
+\bibitem{徐培风}
+徐培凤.
+\newblock 基于图像处理的自动对焦和自动曝光算法研究.
+\newblock 硕士论文, 江苏大学, 7 2005.
+
+\bibitem{liliming}
+李利民 and 刘明辉.
+\newblock 基于机器学习算法的人脸识别鲁棒性研究.
+\newblock {\em 中国电子科学研究院学报}, 12(2):219--224, 6 2017.
+
+\bibitem{李艳梅}
+李艳梅.
+\newblock {\em 图像增强的相关技术及应用研究}.
+\newblock 博士论文, 电子科技大学, 6 2013.
+
+\bibitem{杨灿}
+杨灿.
+\newblock 基于labview的汽车行驶跑偏测试系统研究开发.
+\newblock 硕士论文, 武汉理工大学, 8 2010.
+
+\bibitem{王燕}
+王燕, 曹银杰, 郎丰法, 黄慧, and 于朋朋.
+\newblock 基于emgu cv的数字相机图像采集.
+\newblock {\em 电子科技}, 25(4):31--32, 7 2012.
+
+\bibitem{许欣}
+许欣.
+\newblock {\em 图像增强若干理论方法与应用研究}.
+\newblock 博士论文, 南京理工大学, 10 2010.
+
+\bibitem{谢伟}
+谢伟, 周玉钦, and 游敏.
+\newblock 融合梯度信息的改进引导滤波.
+\newblock {\em 中国图象图形学报}, 21(9):1119--1126, 10 2016.
+
+\bibitem{赵书睿}
+赵书睿.
+\newblock 全景图像拼接关键技术研究.
+\newblock 硕士论文, 电子科技大学, 6 2013.
+
+\bibitem{魏伟一}
+魏伟一.
+\newblock {\em 非均匀光照图像的灰度校正与分割技术研究}.
+\newblock 博士论文, 兰州理工大学, 8 2011.
+
+\bibitem{gaohuihuang}
+黄辉煌.
+\newblock
+  基于多核并行技术的高铁接触网绝缘子异常检测系统的研究与实现.
+\newblock 9 2017.
+
+\end{thebibliography}
