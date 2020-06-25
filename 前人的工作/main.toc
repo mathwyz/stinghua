@@ -7,4 +7,5 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{1.4.2}{多曝光融合}}{7}{subsubsection.1.4.2}
 \contentsline {subsubsection}{\tocsubsubsection {}{1.4.3}{全景图像拼接}}{7}{subsubsection.1.4.3}
 \contentsline {subsubsection}{\tocsubsubsection {}{1.4.4}{非均匀光照图像灰度校正的研究现状}}{11}{subsubsection.1.4.4}
-\contentsline {section}{\tocsection {}{}{References}}{15}{section*.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.4.5}{复杂环境中交通标识识别与状态跟踪估计算法研究}}{15}{subsubsection.1.4.5}
+\contentsline {section}{\tocsection {}{}{References}}{19}{section*.2}

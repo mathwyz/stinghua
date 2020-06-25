@@ -3,46 +3,50 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: ref.bib
+Repeated entry---line 549 of file ref.bib
+ : @article{付中梁
+ :                   ,
+I'm skipping whatever remains of this entry
 Warning--empty journal in gaohuihuang
-You've used 15 entries,
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            576 strings with 5482 characters,
-and the built_in function-call counts, 3941 in all, are:
-= -- 388
-> -- 175
+            583 strings with 5633 characters,
+and the built_in function-call counts, 4338 in all, are:
+= -- 430
+> -- 189
 < -- 0
-+ -- 71
-- -- 56
-* -- 282
-:= -- 731
-add.period$ -- 45
-call.type$ -- 15
-change.case$ -- 77
++ -- 77
+- -- 60
+* -- 302
+:= -- 811
+add.period$ -- 51
+call.type$ -- 17
+change.case$ -- 86
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 144
-empty$ -- 288
-format.name$ -- 56
-if$ -- 778
+cite$ -- 18
+duplicate$ -- 161
+empty$ -- 316
+format.name$ -- 60
+if$ -- 854
 int.to.chr$ -- 0
-int.to.str$ -- 15
+int.to.str$ -- 17
 missing$ -- 7
-newline$ -- 78
-num.names$ -- 30
-pop$ -- 63
+newline$ -- 88
+num.names$ -- 34
+pop$ -- 71
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 64
 quote$ -- 0
-skip$ -- 89
+skip$ -- 99
 stack$ -- 0
-substring$ -- 189
-swap$ -- 10
+substring$ -- 199
+swap$ -- 11
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
+type$ -- 68
 warning$ -- 1
-while$ -- 36
-width$ -- 17
-write$ -- 165
-(There was 1 warning)
+while$ -- 40
+width$ -- 19
+write$ -- 187
+(There was 1 error message)
