@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{测量质量下降的可能情形及原因}{2}{0}{1}
+\beamer@sectionintoc {2}{对问题的数学建模}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{图片降质数学模型}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{图像处理的数学模型}{9}{0}{2}
+\beamer@sectionintoc {3}{当前主要方法和思路}{9}{0}{3}
+\beamer@subsectionintoc {3}{1}{判断是否测量质量下降}{9}{0}{3}
+\beamer@subsectionintoc {3}{2}{质量下降后处理方案}{12}{0}{3}
+\beamer@sectionintoc {4}{目前存在的问题}{23}{0}{4}

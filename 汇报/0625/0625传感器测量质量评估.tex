@@ -1,0 +1,310 @@
+\documentclass{beamer}
+
+\usepackage{ctex}
+\usepackage{wyz}
+
+\usetheme{CambridgeUS}
+
+\title{传感器测量质量评估}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{测量质量下降的可能情形及原因}
+\begin{frame}
+  \title{测量质量下降的可能情形及原因}
+  \begin{block}{椒盐噪声}
+  摄像机拍摄图像过程中,图像传感器、传输信道、解码处理等部件或因素将引入椒盐噪声,  在图像上呈现黑白杂点,进而影响后续图像处理。
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{曝光异常}
+    由于图像采集场景多变,
+    往往存在曝光过度或曝光不足等问题,
+    导致图像曝光异常部分细节丢失.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{运动模糊}
+  在照片曝光期间,相机与被摄物体之间发生相对运动造成的图像模糊称为运动模糊。
+  受运动模糊影响的图像往往在视觉上表现为图像像素整体沿某一方向具有拖影效果。
+  当像素位移量偏大时,将严重影响图像质量。
+  \end{block}
+\end{frame}
+
+\section{对问题的数学建模}
+\subsection{图片降质数学模型}
+\begin{frame}
+  \begin{block}{椒盐噪声}
+  \begin{equation}
+    \label{eq:01}
+  \left\{\begin{array}{l}
+g(x, y)=I(x, y) * \gamma(x, y) \\
+\operatorname{Prob}(\gamma(x, y)=0)=\frac{d_{s p}}{2} \\
+\operatorname{Prob}\left(\gamma(x, y)=\frac{2^{N}-1}{I(x, y)}\right)=\frac{d_{\operatorname{sp}}}{2} \\
+\operatorname{Prob}(\gamma(x, y)=1)=1-d_{s p}
+\end{array}\right.
+  \end{equation}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{曝光异常}
+  \begin{equation}
+    \label{eq:02}
+Z(u, v)=F(z(x, y))=F(\ln (I(x, y))).
+  \end{equation}
+
+  \begin{equation}
+    \label{eq:03}
+\left\{\begin{array}{l}
+S(u, v)=H(u, v) \cdot Z(u, v) \\
+H(u, v)=\left(R_{h}-R_{l}\right) \cdot \gamma(u, v)+R_{l} \\
+\gamma(u, v)=\left(1-\exp \left(-c \cdot\left(\frac{D(u, v)}{D_{0}}\right)^{2}\right)\right) \\
+D(u, v)=\left(\left(u-\frac{M}{2}\right)^{2}+\left(v-\frac{N}{2}\right)^{2}\right)^{0.5}
+\end{array}\right.
+  \end{equation}
+  \begin{equation}
+    \label{eq:04}
+g(x, y)=e^{s(x, y)}=e^{F-1}(S(u, v))
+  \end{equation}
+  \end{block}
+\end{frame}
+\begin{frame}
+  \begin{block}{运动模糊}
+  \begin{equation}
+    \label{eq:05}
+g(x, y)=\frac{1}{L} \sum_{i=0}^{L} f(x-i, y) \Delta t
+  \end{equation}
+  \end{block}
+\end{frame}
+\subsection{图像处理的数学模型}
+\section{当前主要方法和思路}
+\subsection{判断是否测量质量下降}
+\begin{frame}
+  \begin{block}{判断}
+为了确保无效图片对绝缘子的识别
+与异常检测造成干扰, 需要在巡检图片中判定无效图片并做标记便于系统查询。
+  \end{block}
+\end{frame}
+\begin{frame}
+  \begin{block}{判断}
+  \begin{equation}
+    \label{eq:06}
+\begin{array}{l}
+\text { FlagBright }(\mathrm{x}, \mathrm{y})=\left\{\begin{array}{ll}
+1, & I(x, y)>215 \\
+0, & I(x, y) \leq 215
+\end{array}\right. \\
+\text { FlagDark }(\mathrm{x}, \mathrm{y})=\left\{\begin{array}{ll}
+1, & I(x, y)<30 \\
+0, & I(x, y) \geq 30
+\end{array}\right.
+\end{array}
+\end{equation}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{判断}
+\begin{equation}
+  \label{eq:07}
+\operatorname{ImgErr}=\left\{\begin{array}{cc}
+1, & \text { if } \frac{\left(\sum_{i=1}^{\text {width }} \sum_{j=1}^{\text {height }} \operatorname{Flag} \operatorname{Bright}(x, y)\right)}{\text { width * height }}>80 \% \\
+\text { 1, } & \text { if } \frac{\left(\sum_{i=1}^{\text {width }} \sum_{j=1}^{\text {height }} \operatorname{Flag} \operatorname{Dark}(x, y)\right)}{\text { width * height }}>80 \% \\
+0, & \text { else }
+\end{array}\right.
+\end{equation}
+
+  \end{block}
+\end{frame}
+\subsection{质量下降后处理方案}
+
+\begin{frame}
+  \begin{block}{灰度化}
+灰度化，在RGB模型中，如果R=G=B时，则彩色表示一种灰度颜色，其中R=G=B的值叫灰度值，因此，灰度图像每个像素只需一个字节存放灰度值（又称强度值、亮度值），灰度范围为0-255。
+\end{block}
+\begin{block}{图像灰度}
+
+把白色与黑色之间按对数关系分为若干等级，称为灰度。灰度分为256阶。用灰度表示的图像称作灰度图.
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+
+  \begin{block}{灰度变换}
+    \begin{enumerate}
+    \item 线性灰度变换
+    \item 直方图均衡化
+    \item 非线性灰度变换
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{频域方法}
+  \begin{block}{图像增强}
+    \begin{enumerate}
+    \item Retinex 图像增强方法 (快速Retinex 图像增强方法)
+    \item 频域方法
+    \item 色调映射
+    \item 对比度增强
+    \item 机器色感一致
+    \item 基于同态滤波的图像增强方法
+    \item Retinex 图像增强方法
+    \item 梯度区域增强方法
+    \item 参考标样法
+    \end{enumerate}
+
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{频域方法}
+  \begin{block}{原理}
+    图像中的照度和反射成分本是不可明确分开的,但二者在频域中的位置可大致确定.
+    图像中的高频成分往往对应反射分量, 而低频分量则对应照度在空间的变化.
+    通过压制低频分量, 扩大高频分量, 即可有效改善图像的视觉效果.
+  \end{block}
+  \begin{block}{步骤}
+    \begin{enumerate}
+    \item 取对数
+    \item 傅里叶变换
+    \item 压制低频分量,扩大高频分量
+    \item 傅里叶逆变换
+    \item 指数变换
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{ 色调映射}
+  \begin{block}
+色调映射是在有限动态范围媒介上近似显示高动态范甩图像的一项计算机图形学技术, 也是一种增强处理
+\end{block}
+
+\begin{block}{方法}
+  \begin{enumerate}
+  \item 对数函数
+  \item 伽玛校正
+  \item Sigmoidal 函数
+  \end{enumerate}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{对比度增强}
+
+  \begin{block}
+
+    \begin{enumerate}
+    \item 直方图调整映射
+      \begin{enumerate}
+      \item 对数函数
+      \item Sigmoidal 数
+      \end{enumerate}
+    \item 直方图规定化
+  \begin{equation}
+    \label{eq:13}
+    f(\boldsymbol{h})=\left\|\boldsymbol{h}-\boldsymbol{h}_{i}\right\|_{2}^{2}+\lambda\|\boldsymbol{h}-\boldsymbol{u}\|_{2}^{2}+\gamma\|\boldsymbol{D} \boldsymbol{h}\|_{2}^{2}
+  \end{equation}
+    \item 更复杂和灵活的方法是根据图像局部的梯度、边缘等特性决定局部对比度增强的程度.
+    \end{enumerate}
+
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+
+  \frametitle{基于同态滤波的图像增强方法}
+
+  \begin{block}{原理}
+    同态滤波是图像预处理中的一种常用方法, 主要用于解决光照非均匀图像的灰度校正问题。
+    它是把频率过滤和灰度变换结合起来的一种图像处理方法, 主要利用图像的照度一反射分量模型作为频域处理的基础, 通过压缩亮度范围和增强对比度达到改善图像的质量。
+  \end{block}
+
+  \begin{block}{模型}
+
+  在基于同态滤波进行图像灰度不均匀校正和增强的方法中,将图像视为入射分量
+  $i(x,y)$和反射分量$\gamma(x,y)$的乘积:
+  \begin{equation}
+    \label{eq:21}
+    f(x,y)=i(x,y)\times\gamma(x,y)
+  \end{equation}
+
+\end{block}
+
+
+
+
+\end{frame}
+
+\begin{frame}
+  \begin{block}{方法}
+
+  \begin{enumerate}
+  \item 算法的关键是设计一个对傅里叶变换的高频和低频分量影响不同的滤波函数 H(u, v), 一般常选取高斯型同态滤波器进行滤波控制.
+  \item 对于那些因照度不良导致的图像亮度不足和细节模糊, 信噪比较
+低的图像, 增强效果显著。
+\item 但是, 在同态滤波频域算法中需要两次进行傅里叶变换, 占用较
+大的运算空间, 实时性不高。
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle  Retinex 图像增强方法
+  \begin{block}{数学模型}
+  \begin{equation}
+    \label{eq:22}
+I(x,y)=L(x,y)\times R(x,y)
+  \end{equation}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{方法}
+    \begin{itemize}
+    \item 设计出一个合适的滤波器, 使得低频成分削弱, 高频分量适当增强,
+    \item 全局
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{梯度域增强方法}
+  \begin{block}{原理}
+    图像在拍摄时的照度不均匀导致的图像灰度不均匀在梯度场中则表现为梯度的不均匀分布。
+  \end{block}
+  \begin{block}{实现方法}
+    Subr等提出了一种利用图像局部差分综合的目标函数来度量图像对比度, 并通过贪婪迭代优化方法实现目标函数的最大值来校正图像的灰度不均匀。
+  \end{block}
+  \begin{block}{优缺点}
+    图像梯度增强方法能较好地保持原图中的细节信息和层次感, 适合于分析图像的高光和阴影区域信息,缺点是会导致图像在一定程度上产生出锐化效应, 并且在梯度域中重建图像时需要一定的数值计算方法, 不适合于实时性场合的应用
+  \end{block}
+\end{frame}
+\section{目前存在的问题}
+
+\begin{frame}
+  \begin{block}{存在的问题}
+    \begin{enumerate}
+    \item 主要针对照相机图像处理,暂时还没有涉及到一般传感器的理论.
+    \item 目前只是处在理论阶段,没有实验数据的支持.
+    \item 部分理论还在学习中,进展顺利,如傅里叶变换
+    \item 文献整理还在继续,目前主要是国内论文,国外文献人在继续.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\end{document}

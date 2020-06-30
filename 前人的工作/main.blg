@@ -8,45 +8,45 @@ Repeated entry---line 549 of file ref.bib
  :                   ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in gaohuihuang
-You've used 17 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            583 strings with 5633 characters,
-and the built_in function-call counts, 4338 in all, are:
-= -- 430
-> -- 189
+            586 strings with 5723 characters,
+and the built_in function-call counts, 4535 in all, are:
+= -- 451
+> -- 196
 < -- 0
-+ -- 77
-- -- 60
-* -- 302
-:= -- 811
-add.period$ -- 51
-call.type$ -- 17
-change.case$ -- 86
++ -- 80
+- -- 62
+* -- 311
+:= -- 851
+add.period$ -- 54
+call.type$ -- 18
+change.case$ -- 91
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 161
-empty$ -- 316
-format.name$ -- 60
-if$ -- 854
+cite$ -- 19
+duplicate$ -- 169
+empty$ -- 330
+format.name$ -- 62
+if$ -- 892
 int.to.chr$ -- 0
-int.to.str$ -- 17
+int.to.str$ -- 18
 missing$ -- 7
-newline$ -- 88
-num.names$ -- 34
-pop$ -- 71
+newline$ -- 93
+num.names$ -- 36
+pop$ -- 75
 preamble$ -- 1
-purify$ -- 64
+purify$ -- 67
 quote$ -- 0
-skip$ -- 99
+skip$ -- 104
 stack$ -- 0
-substring$ -- 199
+substring$ -- 204
 swap$ -- 11
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
+type$ -- 72
 warning$ -- 1
-while$ -- 40
-width$ -- 19
-write$ -- 187
+while$ -- 42
+width$ -- 20
+write$ -- 198
 (There was 1 error message)

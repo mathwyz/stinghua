@@ -1,0 +1,166 @@
+\documentclass{beamer}
+
+\usepackage{ctex}
+\usepackage{wyz}
+
+\usetheme{CambridgeUS}
+
+\title{点云}
+\author{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+
+\section{点云}
+
+
+
+
+\begin{frame}
+  \begin{block}{点云}
+在逆向工程中通过测量仪器得到的产品外观表面的点数据集合也称之为点云，通常使用三维坐标测量机所得到的点数量比较少，点与点的间距也比较大，叫稀疏点云；而使用三维激光扫描仪或照相式扫描仪得到的点云，点数量比较大并且比较密集，叫密集点云。
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \begin{block}{点云}
+  \begin{itemize}
+  \item 物体的三维坐标 (X,Y,Z)
+  \item 信息 光照强度,颜色信息,时间信息.
+  \item 点云数据一般表示为N行，至少三列的numpy数组。每行对应一个单独的点，所以使用至少3个值的空间位置点(X, Y, Z)来表示。
+  \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\section{点云的处理方法}
+
+\begin{frame}
+  \frametitle{点云的处理方法}
+  \begin{block}{方法}
+  \begin{itemize}
+  \item 将点云数据投影到二维平面
+  \item 点云语义分割
+  \item 点云实例分割
+  \item 深度学习
+  \item 图论
+  \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{将点云数据投影到二维平面}
+  \begin{block}{投影}
+此种方式不直接处理三维的点云数据，而是先将点云投影到某些特定视角再处理，如前视视角和鸟瞰视角。
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{点云语义分割}
+  语义分割的目标是将输入的点云数据分为不同的语义类别。
+
+  \begin{block}{  PointNet}
+  \begin{itemize}
+  \item  空间转换网络模块
+  \item  循环神经网络 (RNN) 模块
+  \item 对称函数模块。
+  \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{点云实例分隔}
+
+  实例分割任务不仅需要区分具有不同语义含义的点,
+  而且还需要将具有相同语义含义的实例点分离出来。
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item  基于 proposal 的方法
+  \item Proposal-free 的方法
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+  \item 多视角化投影
+  \item 体素化网络
+  \item 深度学习在点云上的直接应用
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{多视角化投影}
+    多视角化投影既将3D的点云数据投影到2D的视角,再用2D视角下的卷积神经网络方法.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{深度学习直接应用}
+    \begin{itemize}
+    \item 池化层保证云排列不变性
+      \begin{itemize}
+      \item 全局最大池化
+      \item 平均最大池化
+      \end{itemize}
+    \item 特殊空间变换网络
+      \begin{itemize}
+      \item 特征提取网络
+      \item 网络生成器
+      \item 采样器
+      \end{itemize}
+    \end{itemize}
+
+  \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{点云到图像平面的投影}
+  \begin{itemize}
+  \item 计算点云到图像的投影矩阵
+  \end{itemize}
+\end{frame}
+
+\section{多传感器融合}
+\begin{frame}
+  \frametitle{多传感器融合}
+  \begin{itemize}
+  \item 点云数据是三维的点
+  \item 图片信息是二维的点加上颜色,亮度
+  \item 多信息融合
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{彩色点云}
+
+  \begin{block}{彩色点云}
+    \begin{itemize}
+    \item 计算点云到图像平面的投影矩阵
+    \item 投影到图像平面
+    \item 取点云对应像素的RGB值
+    \item 取原点云x,y,z
+    \item 颜色矩阵要用colormap
+    \item 构造一个pointCloud对象(velo_xyz,'Color',color_m)
+    \end{itemize}
+
+  \end{block}
+\end{frame}
+
+
+
+\end{document}

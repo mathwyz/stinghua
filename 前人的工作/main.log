@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.2.21)  25 JUN 2020 11:41
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.2.21)  25 JUN 2020 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2278,7 +2278,7 @@ LaTeX Font Warning: Font shape `TU/FandolSong-Regular(0)/m/sc' undefined
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 32.
+(Font)              size <10.95> substituted on input line 35.
 
 [1] [2]
 Overfull \hbox (35.80527pt too wide) detected at line 130
@@ -2317,8 +2317,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.225 \end{itemize}
-                   
+l.225 \end{enumerate}
+                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2331,6 +2331,13 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 273.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 273.
+
+Overfull \hbox (5.63315pt too wide) in paragraph at lines 293--302
+[]\TU/FandolSong-Regular(0)/m/n/10.53937 常 见 的 机 器 一 致 色 感 算 法 基 于 以 下 两 种 假 设 
+之 一\TU/lmr/m/n/10.53937 : \TU/FandolSong-Regular(0)/m/n/10.53937 白 片 假 设 和 灰 色 
+世 界 假 设\TU/lmr/m/n/10.53937 . \TU/FandolSong-Regular(0)/m/n/10.53937 白 片 \TU/lm
+r/m/n/10.53937 (White
+ []
 
 [6] [7] [8] [9]
 *************************************************
@@ -2353,14 +2360,18 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
 [10] [11] [12]
-Overfull \hbox (36.89748pt too wide) in paragraph at lines 587--590
+Overfull \hbox (21.0754pt too wide) in paragraph at lines 587--590
 []\TU/lmr/m/n/10.53937 Retinex \TU/FandolSong-Regular(0)/m/n/10.53937 图 像 增 强 方
  法 \TU/lmr/m/n/10.53937 Retinex \TU/FandolSong-Regular(0)/m/n/10.53937 算 法 最 早 
 由 \TU/lmr/m/n/10.53937 Land \TU/FandolSong-Regular(0)/m/n/10.53937 提 出 的 解 释 人 
 类 视 觉 系 统 \TU/lmr/m/n/10.53937 (HSV,HumanVisual
  []
 
-[13] [14] [15]
+[13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+[15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
@@ -2371,11 +2382,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
 (./main.bbl [19]) [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 774.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 774.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 794.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 794.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 774.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 774.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 794.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 794.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2384,15 +2395,15 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 774.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 794.
  ) 
 Here is how much of TeX's memory you used:
- 41745 strings out of 494558
- 807810 string characters out of 6167440
- 893464 words of memory out of 5000000
- 44881 multiletter control sequences out of 15000+600000
+ 41744 strings out of 494558
+ 807776 string characters out of 6167440
+ 899587 words of memory out of 5000000
+ 44880 multiletter control sequences out of 15000+600000
  539258 words of font info for 82 fonts, out of 8000000 for 9000
  425 hyphenation exceptions out of 8191
- 62i,12n,74p,10430b,766s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,74p,10430b,776s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (20 pages).
